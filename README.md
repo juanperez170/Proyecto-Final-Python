@@ -32,7 +32,7 @@ El backend de esta pagina esta subido en vercel, por lo que podriamos utilizarlo
 
 1. Clonamos el repositorio
 ```
-https://github.com/JuanIgnacioPerez/ProyectoFinalDjango-Juan Ignacio Perez.git
+https://github.com/juanperez170/Proyecto-Final-Python.git
 ```
 2. Nos posicionamos en la carpeta del Proyecto
 ```
