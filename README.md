@@ -2,7 +2,6 @@
 
 ## 👪 Integrantes 
 - [Juan Ignacio Perez](https://github.com/JuanIgnacioPerez)
-- [Juan Ignacio Perez](https://github.com/JuanIgnacioPerez)
 
 
 ## 📜 Requerimientos 
