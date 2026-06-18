@@ -1,7 +1,7 @@
 # Proyecto Final - Python - CODERHOUSE
 
 ## 👪 Integrantes 
-- [Juan Ignacio Perez](https://github.com/juanperez170/Proyecto-Final-Python.git)
+- [juanperez170](https://github.com/juanperez170/Proyecto-Final-Python.git)
 
 
 ## 📜 Requerimientos 
