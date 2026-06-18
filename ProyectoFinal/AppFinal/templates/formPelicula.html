@@ -1,0 +1,36 @@
+{% extends 'padre.html' %}
+
+
+{% block contenidoQueCambia1 %}
+
+<h1 class="text-center my-2">Formulario de Registro de Peliculas</h1>
+<form class= "container my-3" action="{% url 'formularioPelicula' %}" enctype="multipart/form-data" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre de la Pelicula">
+    </div>
+    <div class="form-group">
+    <label>Subtitulo</label>
+    <input type="text" class="form-control" name="subtitulo" placeholder="Ingrese el nombre del Subtitulo de la Pelicula">
+    </div>
+    <div class="form-group">
+    <label>Imagen</label>
+    <input type="file" class="form-control" name="imagen" accept="image/*" placeholder="Agregue caratula de Pelicula">
+    </div>
+    <div class="form-group">
+      <label>Descripcion</label>
+      <input type="text" class="form-control" name="descripcion" placeholder="Ingrese una descripcion">
+    </div>
+        <div class="form-group">
+    <label>Reseña</label>
+    <input type="text" class="form-control" name="reseña" placeholder="Ingrese reseña de la Pelicula">
+    </div>
+    <div class="form-group">
+      <label>Link de Youtube</label>
+      <input type="url" class="form-control" name="youtube">
+    </div>
+    <button type="submit" class="btn btn-secondary my-2">Enviar</button>
+  </form>
+
+
+{% endblock contenidoQueCambia1 %}

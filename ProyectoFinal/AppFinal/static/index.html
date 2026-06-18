@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="blog de horror">
+    <meta name="keywords" content="terror,horror,pelicula,serie">
+    <meta name="author" content="Juan Ignacio Perez">
+    <title>CodeHorror</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+              <a class="navbar-brand" href="index.html">
+                <img class="w-100" src="img/logoo.png" alt="Logo" height="100px">
+              </a>
+              <div class="ps-lg-5 ms-5 d-xl-flex d-none " id="#">
+                <input class="nav-search ms-5" placeholder="Buscá tu serie o peli favorita" aria-label="Search" required minlength="2" maxlength="50" id="#"/>
+                <button class="nav-search-icon" disabled type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <ul class="ms-0 listaBusqueda bg-light rounded d-none" id="#">
+                </ul>
+            </div>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu"
+                aria-controls="navbarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarMenu"
+              >
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active linkNav" aria-current="page" href="index.html"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link linkNav" href="peliculas.html">Peliculas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link linkNav" href="series.html">Series</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link linkNav" href="{#}">Nosotros</a>
+                  </li>
+                </ul>
+                <div>
+                    <a href="#" class="ghst-btn mx-2">Login</a>
+                </div>
+              </div>
+            </div>
+          </nav> 
+
+    </header>
+    <main>
+        <section>
+            <div>
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/horror banner.jpg" class="d-block w-100" alt="Cartel de terror">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <article class="container">
+                <h2 class="text-center mt-3">Proximos estrenos de horror</h2>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3 my-3">
+                        <div class="card bg-dark text-light card1">
+                          <img
+                            src="img/CardEstrenos/exorcista-believer.jpg"
+                            class="card-img-top imagenCard"
+                            alt="exorcista-believer"
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title text-center">
+                              EL EXORCISTA - BELIEVER
+                            </h5>
+                            <p class="card-text">
+                              Secuela del clasico de 1976
+                            </p>
+                          </div>
+                          <div class="centrado">
+                            <button
+                              class="btn btn-outline-light mb-2 mx-auto"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalDetalleProducto"
+                            >
+                              Ver mas
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3 my-3">
+                        <div class="card bg-dark text-light card1">
+                          <img
+                            src="img/CardEstrenos/Insidious-The-Red-Door-header.png"
+                            class="card-img-top imagenCard"
+                            alt="Insidious-The-Red-Door-header"
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title text-center">
+                              INSIDIUS - THE RED DOOR
+                            </h5>
+                            <p class="card-text">
+                              El capitulo final de la saga se estrena en julio
+                            </p>
+                          </div>
+                          <div class="centrado">
+                            <button
+                              class="btn btn-outline-light mb-2 mx-auto"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalDetalleProducto"
+                            >
+                              Ver mas
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3 my-3">
+                        <div class="card bg-dark text-light card1">
+                          <img
+                            src="img/CardEstrenos/Saw-x-poster.jpg"
+                            class="card-img-top imagenCard"
+                            alt="saw-x"
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title text-center">
+                              SAW X
+                            </h5>
+                            <p class="card-text">
+                              Jigsaw y Amanda regresan en una retorcida secuela
+                            </p>
+                          </div>
+                          <div class="centrado">
+                            <button
+                              class="btn btn-outline-light mb-2 mx-auto"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalDetalleProducto"
+                            >
+                              Ver mas
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-4 col-lg-3 my-3">
+                        <div class="card bg-dark text-light card1">
+                          <img
+                            src="img/CardEstrenos/the-nun-ii-2-poster.webp"
+                            class="card-img-top imagenCard"
+                            alt="the-nun-2"
+                          />
+                          <div class="card-body">
+                            <h5 class="card-title text-center">
+                              LA MONJA 2 - VALAK    
+                            </h5>
+                            <p class="card-text">
+                              La monja demoniaca vuelve a las andadas
+                            </p>
+                          </div>
+                          <div class="centrado">
+                            <button
+                              class="btn btn-outline-light mb-2 mx-auto"
+                              type="button"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modalDetalleProducto"
+                            >
+                              Ver mas
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="">
+                    <h2 class="text-center my-4">Ultimas noticias</h2>
+                    <div class="">
+                        <div class="card cardTamaño mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/Noticias/nicolas-cage.jpg" class="img-fluid rounded-start mt-1" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <p style="color: red;">#TRAILER</p>
+                                  <h5 class="card-title"><a href="#" class="text-dark cardNoticia"><b>Nicolas Cage en el tráiler oficial de "Dream Scenario", el título producido por Ari Aster</b></a></h5>
+                                  <p class="card-text">La película dirigidida por Kristoffer Borgli que llegará a los cines americanos el próximo mes de noviembre</p>
+                                  <p class="card-text"><small class="text-body-secondary">3 semanas.</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card cardTamaño mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/Noticias/reino-animal.jpg" class="img-fluid rounded-start mt-1" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <p style="color: red;">#TRAILER</p>
+                                  <h5 class="card-title"><a href="#" class="text-dark cardNoticia"><b>Tráiler español de "El Reino Animal", título que veremos en el Festival de Sitges</b></a></h5>
+                                  <p class="card-text">La película, protagonizada por Romain Duris, Paul Kircher y Adèle Exarchopoulos, competirá en la Sección Oficial del Festival.</p>
+                                  <p class="card-text"><small class="text-body-secondary">3 semanas.</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card cardTamaño mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/Noticias/slotherhouse.jpg" class="img-fluid rounded-start mt-1" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <p style="color: red;">#TRAILER</p>
+                                  <h5 class="card-title"><a href="#" class="text-dark cardNoticia"><b>¡Cuidado con el Perezoso Asesino! Tráiler Oficial de "Slotherhouse"</b></a></h5>
+                                  <p class="card-text">La cinta que mañana se estrenará en Estados Unidos a través de plataformas digitales.</p>
+                                  <p class="card-text"><small class="text-body-secondary">3 semanas.</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card cardTamaño mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/Noticias/chucky.jpg" class="img-fluid rounded-start mt-1" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <p style="color: red;">#TRAILER</p>
+                                  <h5 class="card-title"><a href="#" class="text-dark cardNoticia"><b>"Chucky": Nuevo Tráiler de la 3ª Temporada que estará dividida en dos partes</b></a></h5>
+                                  <p class="card-text">La huelga de guionistas y actores reducirá el número de episodios que se verán en octubre.</p>
+                                  <p class="card-text"><small class="text-body-secondary">3 semanas.</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card cardTamaño mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/Noticias/hounted-house.jpg" class="img-fluid rounded-start mt-1" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <p style="color: red;">#VIDEOJUEGOS</p>
+                                  <h5 class="card-title"><a href="#" class="text-dark cardNoticia"><b>Tráiler de "Haunted House", la reimaginación del título clásico de Atari de 1982</b></a></h5>
+                                  <p class="card-text">El juego que fue el precursor de los Survival Horror actuales tendrá una nueva versión.</p>
+                                  <p class="card-text"><small class="text-body-secondary">3 semanas.</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card cardTamaño mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4">
+                                <img src="img/Noticias/cine.jpg" class="img-fluid rounded-start mt-1" alt="...">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                    <p style="color: red;">#CINE</p>
+                                  <h5 class="card-title"><a href="#" class="text-dark cardNoticia"><b>La Monja y Poirot empatan en lo más alto de la taquilla americana</b></a></h5>
+                                  <p class="card-text">Ambos títulos logran 14 millones de dólares de recaudación estos tres días.</p>
+                                  <p class="card-text"><small class="text-body-secondary">3 semanas.</small></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="text-center text-lg-start bg-dark text-light">
+      <section class="container-fluid">
+        <div class="container text-center text-md-start mt-5 p-2">
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-4 mx-auto mb-4">
+              <a href="#">
+                <img
+                src="img/logoo.png"
+                alt="Logo cocu"
+                width="70%"
+                height="70%"
+              />
+              </a>
+            </div>
+            <div class="col-md-4 col-lg-2 col-xl-4 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Conocenos</h6>
+              <p><a class="text-light linkFooter" href="error404.html">Contactanos</a></p>
+              <p><a class="text-light linkFooter" href="error404.html">Informacion legal</a></p>
+              <p><a class="text-light linkFooter" href="error404.html">Politica de privacidad</a></p>
+              <p><a class="text-light linkFooter" href="error404.html">Terminos y condiciones de uso</a></p>
+            </div>
+            <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                Redes sociales
+              </h6>
+              <p><a class="linkFooter text-light" href="#"><i class="fs-4 bi bi-facebook linkFooter text-light"></i> Facebook</a></p>
+              <p><a class="linkFooter text-light" href="#"
+                ><i class="fs-4 bi bi-instagram linkFooter text-light"></i
+              > Instagram</a></p>
+              <p><a class="linkFooter text-light" href="#"><i class="fs-4 bi bi-twitter linkFooter text-light"></i> Twitter</a></p>
+            </div>
+          </div>
+          <div class="ms-lg-0 ms-auto me-auto text-center">
+            <p class="text-white">Copyright&copy;2023 - Todos los derechos reservados.</p>
+        </div>
+        </div>
+        
+      </section>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

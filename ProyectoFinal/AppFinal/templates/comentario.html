@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+<div class="container">
+    <h1 h1 class="mb-3" style="color: rgb(249,119,90);">Agrega un Comentario</h1>
+</div>
+<br>
+<div class="container" style="color: white;">
+<div class="form-group">
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+</div></div>
+
+<br>
+{% endblock contenidoQueCambia %}

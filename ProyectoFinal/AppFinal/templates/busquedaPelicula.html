@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+
+{% block contenidoQueCambia1 %}
+    
+<form class= "container my-3" action="{% url 'Buscar' %}" method="get">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" name="nombre" placeholder="Ingrese el nombre de la Pelicula">
+    </div>
+    <button type="submit" class="btn btn-secondary my-2">Buscar</button>
+  </form>
+
+
+{% endblock contenidoQueCambia1 %}

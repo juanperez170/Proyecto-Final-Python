@@ -1,0 +1,10 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia1 %}
+    <form action="{% url 'EditarSerie' id %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+        {{miFormulario.as_div}}
+
+        <button type="submit"> Actualizar </button>
+    </form>
+{% endblock contenidoQueCambia1 %}

@@ -1,0 +1,33 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia1 %}
+    <div class="container text-light" >
+        <h1 class="mb-3" style="color: rgb(249,119,90);">Bienvenido a "Editar Perfil de Usuario"</h1>
+
+        <form action="{% url 'EditarPefil' %}" method="post" class="custom-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="{{ miFormulario.email.id_for_label }}">Correo Electrónico:</label>
+                {{ miFormulario.email }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="{{ miFormulario.username.id_for_label }}">Nombre de Usuario:</label>
+                {{ miFormulario.username }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="{{ miFormulario.password1.id_for_label }}">Contraseña:</label>
+                {{ miFormulario.password1 }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="{{ miFormulario.password2.id_for_label }}">Repita Contraseña:</label>
+                {{ miFormulario.password2 }}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-warning">Actualizar</button>
+        </form>
+    </div>
+{% endblock contenidoQueCambia1 %}

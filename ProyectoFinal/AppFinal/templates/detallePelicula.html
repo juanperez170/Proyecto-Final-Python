@@ -1,0 +1,54 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia1 %}
+    <h1 class="mb-5 text-center mt-4" style="color: yellow;">{{ pelicula.nombre }}</h1>
+    <div class="container text-light d-flex justify-content-center" >
+        <br>
+        <br>
+        <div class="row container">
+            <div class="col-lg-6">
+                {% if pelicula.imagenpelicula %}
+                    <img src="{{ pelicula.imagenpelicula.url }}" class="img-fluid" alt="{{ pelicula.nombre }}">
+                {% else %}
+                    <img src="tu-imagen-predeterminada.jpg" class="img-fluid" alt="Imagen no disponible">
+                {% endif %}
+            </div>
+            <div class="col-lg-6">
+                <h2 style="color: yellow;">{{ pelicula.subtitulo}}</h2>
+                <p>Descripción: {{ pelicula.descripcion }}</p>
+                <h3 style="color: yellow;">Reseña:</h3>
+                <p>{{ pelicula.reseña }}</p>
+
+                <h3 style="color: yellow;">Trailer:</h3>
+            {% if pelicula.youtube %}
+                <iframe width="560" height="315" src="{{ pelicula.youtube }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {% else %}
+                <p>Video de YouTube no disponible.</p>
+            {% endif %}
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="color: white;">
+        <h4>Comentarios</h4>
+        <br>
+        <div class="container">
+        {% if not pelicula.comentarios.all %}
+            Esta pelicula no ha sido comentada aun
+        {% else %}
+            {% for comentario in pelicula.comentarios.all %}
+            <p><strong>{{comentario.nombre}}</strong></p>
+            <p>{{comentario.mensaje}}</p>
+            <p><small>{{comentario.fechaComentario}}</small></p>
+            <hr>
+            {% endfor %}
+        {% endif %}
+        <a href="{% url 'comentario' pelicula.pk %}">Agrega un Comentario</a>
+        </div>
+    </div>
+    
+
+    
+
+{% endblock contenidoQueCambia1 %}

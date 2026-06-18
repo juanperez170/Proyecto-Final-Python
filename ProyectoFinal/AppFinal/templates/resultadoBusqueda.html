@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+
+{% block contenidoQueCambia1 %}
+<div class="container my-3">
+    <h3>Resultados de la busqueda de Pelicula</h3>
+
+{% if nombres %}
+<ul>
+    {% for nombre in nombres  %}
+                <li>{{nombre}}</li>                
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+    
+{% endblock contenidoQueCambia1 %}

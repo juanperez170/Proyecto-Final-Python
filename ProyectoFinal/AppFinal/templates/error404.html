@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="blog de horror">
+    <meta name="keywords" content="terror,horror,pelicula,serie">
+    <meta name="author" content="Juan Ignacio Perez">
+    <title>CodeHorror</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/db30d1a3bd.js" crossorigin="anonymous"></script>
+  </head>
+
+<body>
+    <div class="container">
+  
+        <div  class="error">
+          <p class="p">4</p>
+          <span class="dracula">      
+            <div class="con">
+              <div class="hair"></div>
+              <div class="hair-r"></div>
+              <div class="head"></div>
+              <div class="eye"></div>
+              <div class="eye eye-r"></div>
+              <div class="mouth"></div>
+              <div class="blod"></div>
+              <div class="blod blod2"></div>
+            </div>
+          </span>
+          <p class="p">4</p>
+          
+          <div class="page-ms">
+            <p class="page-msg"> Oops, no se encontro la pagina que buscabas ... </p>
+            <a href="{% url 'inicio' %}"><button class="go-back">Volver a inicio</button></a>
+          </div>
+      </div>
+        </div>
+      
+      <iframe style="width:0;height:0;border:0; border:none;" scrolling="no" frameborder="no" allow="autoplay" src="https://instaud.io/_/2Vvu.mp3"></iframe>
+</body>
+
+</html>
+    

@@ -1,0 +1,43 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia1 %}
+    <h1 class="text-center">Listado de Series</h1>
+    <br>
+    <div class="container">
+        <button class="btn btn-primary"><a href="{% url 'formularioSerie' %}" style="text-decoration: none; color: white;" >Agregar Series</a></button>  
+    <div class="card-container">
+        <div class="row">
+            {% for serie in lista_series %}
+                <div class="col-12 col-md-4 col-lg-3 my-3">
+                    <div class="card equal-height-card">
+
+                        {% if serie.imagenserie %}
+                            <img src="{{ serie.imagenserie.url }}"class="card-img-top" alt="{{ serie.nombre }}">
+                        {% else %}
+                            <img src="tu-imagen-predeterminada.jpg" class="card-img-top" alt="Imagen no disponible" />
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ serie.nombre }} {% if serie.es_nuevo %}<span class="badge bg-warning">NUEVO</span>{% endif %}
+                            </h5>
+                            <p class="card-text">
+                                Descripción: {{ serie.descripcion }}
+                            </p>
+                            <div class="btn-group" role="group">
+                                <form action="{% url 'EliminarSeries' serie.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger" style="margin-right: 10px">Eliminar</button>
+                                </form>
+                                <button type="submit" class="btn btn-primary" >
+                                    <a href="{% url 'EditarSerie' serie.id %}" style="color: white; text-decoration: none">Editar</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock contenidoQueCambia1 %}

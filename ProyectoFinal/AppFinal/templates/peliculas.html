@@ -1,0 +1,30 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia1 %}
+    <h1>Listado de Películas</h1>
+    <div class="card-container">
+        <div class="row">
+            {% for pelicula in lista_peliculas %}
+                <div class="col-12 col-md-4 col-lg-3 my-3">
+                    <div class="card equal-height-card">
+
+                        {% if pelicula.imagenpelicula %}
+                            <img src="{{ pelicula.imagenpelicula.url }}"class="card-img-top" alt="{{ pelicula.nombre }}">
+                        {% else %}
+                            <img src="tu-imagen-predeterminada.jpg" class="card-img-top" alt="Imagen no disponible" />
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ pelicula.nombre }} {% if pelicula.es_nuevo %}<span class="badge bg-warning">NUEVO</span>{% endif %}
+                            </h5>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary"><a href="{% url 'pelicula' pelicula.pk %}" style="text-decoration: none; color: white;" >Ver Mas</a></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock contenidoQueCambia1 %}
+

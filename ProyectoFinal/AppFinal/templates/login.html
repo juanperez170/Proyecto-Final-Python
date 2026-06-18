@@ -1,0 +1,29 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia1 %}
+<div class="container">
+    <h1 class="mb-3" style="color: rgb(249,119,90);">Bienvenido al Login</h1>
+    <form action="{% url 'Login' %}" method="post" style="color: white;">
+        {% csrf_token %}
+<!-- 
+        {{ miFormulario.as_p }} -->
+
+        <div class="form-group">
+            <label for="{{ miFormulario.username.id_for_label }}">Usuario:</label>
+            <br>
+            {{ miFormulario.username }}
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="{{ miFormulario.password.id_for_label }}">Contraseña:</label>
+            <br>
+            {{ miFormulario.password }}
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-warning">Ingresar</button>
+    <br>
+    <br> 
+        <p>Si todavía no tenes cuenta, Registrate <a href="{% url 'Registrar' %}">Aquí</a></p>
+    </form>
+</div>
+{% endblock contenidoQueCambia1 %}
